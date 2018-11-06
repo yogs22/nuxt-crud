@@ -1,7 +1,6 @@
-# nuxt
+# NuxtJS Crud
 
-> Nuxt.js project
-
+This is an example of Nuxt.js CRUD
 ## Build Setup
 
 ``` bash
