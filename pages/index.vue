@@ -9,10 +9,8 @@
 import axios from '~/plugins/axios'
 
 export default {
-  asyncData() {
-  	return axios.get('negara').then(res => ({
-  		countries: res.data
-  	}))
-  }
+  computed: mapState([
+  		'countries'
+  	])
 }
 </script>
