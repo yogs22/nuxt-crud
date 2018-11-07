@@ -1,24 +1,64 @@
 {
-	"negara" : [
-		{
-			"id" : 0,
-			"name" : "Indonesia"
-		},
-		{
-			"id" : 1,
-			"name" : "Singapore"
-		},
-		{
-			"id" : 2,
-			"name" : "Amerika"
-		},
-		{
-			"id" : 3,
-			"name" : "Australia"
-		},
-		{
-			"id" : 4,
-			"name" : "Arab"
-		}
-	]
+  "negara": [
+    {
+      "id": 0,
+      "name": "Indonesia"
+    },
+    {
+      "id": 1,
+      "name": "Singapore"
+    },
+    {
+      "id": 2,
+      "name": "Amerika"
+    },
+    {
+      "id": 3,
+      "name": "Australia"
+    },
+    {
+      "id": 4,
+      "name": "Arab"
+    },
+    {
+      "name": "Wakanda",
+      "id": 5
+    },
+    {
+      "name": "test",
+      "id": 6
+    },
+    {
+      "name": "test",
+      "id": 7
+    },
+    {
+      "name": "test",
+      "id": 8
+    },
+    {
+      "name": "keren",
+      "id": 9
+    },
+    {
+      "name": "keren",
+      "id": 10
+    },
+    {
+      "name": "test",
+      "id": 11
+    },
+    {
+      "name": "test",
+      "id": 12
+    },
+    {
+      "name": "Polandia",
+      "id": 13
+    },
+    {
+      "name": "Error",
+      "id": 14
+    }
+  ]
 }
