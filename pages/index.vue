@@ -1,23 +1,32 @@
 <template>
   <section class="container">
-	<h1 class="title">NuxJS Project</h1>
-	<ul class="panel">
-		<li class="panel-heading">Daftar Negara</li>
-		<li class="panel-block" v-for="country in countries" :key="country.id">
-			{{ country.name }}
-		</li>
-	</ul>
-	<form @submit.prevent="add(name)">
-		<div class="field">
-			<label class="label">Name</label>
-			<div class="control">
-				<input type="text" class="input" v-model="name">
-			</div>
+	<h1 class="title">NuxJS API Project</h1>
+	<h2 class="subtitle">Name of Countries</h2>
+	<div class="columns"> 
+		<div class="column">
+			<form @submit.prevent="add(name)">
+				<div class="field">
+					<label class="label">Name</label>
+					<div class="control">
+						<input type="text" class="input" v-model="name">
+					</div>
+				</div>
+				<div class="control">
+					<button class="button is-link">Submit</button>
+				</div>
+			</form>
 		</div>
-		<div class="control">
-			<button class="button is-link">Submit</button>
+		<div class="column">
+			<ul class="panel">
+				<li class="panel-heading">Countries List</li>
+				<li class="panel-block" v-for="country in countries" :key="country.id">
+					{{ country.name }} / &nbsp;
+					<button class="button is-info">Edit</button> &nbsp; 
+					<button class="button is-danger">Delete</button>
+				</li>
+			</ul>
 		</div>
-	</form>
+	</div>
   </section>
 </template>
 
