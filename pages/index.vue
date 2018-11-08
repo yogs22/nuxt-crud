@@ -22,7 +22,10 @@
 		<div class="column">
 			<ul class="panel">
 				<li class="panel-heading">Countries List</li>
-				<li class="panel-block" v-for="country in countries" :key="country.id">
+				<li class="panel-block">
+					<input type="text" class="input is-small" v-model="searchKey" placeholder="Search Countries">
+				</li>
+				<li class="panel-block" v-for="country in filteredCountries" :key="country.id">
 					{{ country.name }} / &nbsp;
 					<button class="button is-info" @click="show(country.id)">Edit</button> &nbsp; 
 					<button class="button is-danger" @click="remove(country.id, country.name)">Delete</button>
@@ -41,12 +44,18 @@ export default {
 		return {
 			name: '',
 			isHidden: true,
-			activeItem: null
+			activeItem: null,
+			searchKey: '',
+			countries: this.$store.state.countries
 		}
 	},
-	computed: mapState([
-		'countries'
-	]),
+	computed: {
+		filteredCountries() {
+			return this.countries.filter(
+				country => country.name.toLowerCase().indexOf(this.searchKey.toLowerCase()) !== -1
+			)
+		}
+	},
 	methods: {
 		add(name) {
 			this.$store.dispatch('store', name)
