@@ -17,12 +17,8 @@
       "name": "Australia"
     },
     {
-      "id": 4,
-      "name": "Arab"
-    },
-    {
-      "name": "Australia",
-      "id": 5
+      "name": "Arab",
+      "id": 4
     }
   ]
 }

@@ -4,20 +4,20 @@
 	<h2 class="subtitle">Name of Countries</h2>
 	<div class="columns"> 
 		<div class="column">
-			 
+			<form @submit.prevent="(activeAction == 'add') ? add(name) : update(name)">
 				<div class="field">
 					<label class="label">Name</label>
 					<div class="control">
 						<input type="text" class="input" v-model="name" required>
 					</div>
 				</div>
-				<div class="control" :class="{hidden: !isHidden}" @click="add(name)">
+				<div class="control" :class="{hidden: !isHidden}">
 					<button class="button is-link">Submit</button>
 				</div>
-				<div class="control" :class="{hidden: isHidden}" @click="update(name)">
+				<div class="control" :class="{hidden: isHidden}">
 					<button class="button is-link">Update</button>
 				</div>
-			 
+			</form> 
 		</div>
 		<div class="column">
 			<ul class="panel">
@@ -44,6 +44,7 @@ export default {
 		return {
 			name: '',
 			isHidden: true,
+			activeAction: 'add',
 			activeItem: null,
 			searchKey: '',
 			countries: this.$store.state.countries
@@ -66,6 +67,7 @@ export default {
 				this.name = res.name
 				this.activeItem = res
 				this.isHidden = false
+				this.activeAction = 'update'
 			})
 		},
 		update() {
@@ -75,6 +77,7 @@ export default {
 			})
 			this.name = ''
 			this.isHidden = true
+			this.activeAction = 'add'
 		},
 		remove(id, name) {
 			if (confirm('Do you want delete ' + name + ' ?')) {
